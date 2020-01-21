@@ -38,7 +38,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(136, 103);
+            this.progressBar1.Location = new System.Drawing.Point(177, 130);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(263, 16);
             this.progressBar1.TabIndex = 3;
@@ -54,17 +54,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(136, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(565, 108);
+            this.label1.Size = new System.Drawing.Size(331, 108);
             this.label1.TabIndex = 4;
-            this.label1.Text = "                    ";
+            this.label1.Text = "           ";
             // 
             // Loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 131);
+            this.ClientSize = new System.Drawing.Size(576, 171);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Classes
 
         public void executa(String _query)
         {
-            conexao = new MySqlConnection("Persist Security Info=False; server=fdb24.awardspace.net; database=3263913_viabela; uid =3263913_viabela; password =r14011994");
+            conexao = new MySqlConnection("Persist Security Info=False; server=localhost; database=MBR; uid =root; password =root");
             conexao.Open();
             MySqlCommand command = new MySqlCommand(_query, conexao);
             command.ExecuteNonQuery();

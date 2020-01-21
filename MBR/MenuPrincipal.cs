@@ -17,6 +17,11 @@ namespace MBR
             InitializeComponent();
         }
 
+        private void ToolStripButton9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
       
     }
 }
