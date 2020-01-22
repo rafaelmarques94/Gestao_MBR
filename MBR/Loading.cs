@@ -25,7 +25,7 @@ namespace MBR
 
             if (progressBar1.Value < 100)
             {
-                progressBar1.Value = progressBar1.Value + 2;
+                progressBar1.Value = progressBar1.Value + 10;
             }
             if (progressBar1.Value == 100)
             {

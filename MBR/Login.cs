@@ -18,7 +18,7 @@ namespace MBR
         public Login()
         {
             InitializeComponent();
-            ChecarLogin(txtnome.Text, txtsenha.Text);
+            //ChecarLogin(txtnome.Text, txtsenha.Text);
         }
 
 
@@ -68,7 +68,7 @@ namespace MBR
 
             MySqlConnection mConn = new MySqlConnection("Persist Security Info=False;server=localhost;database=MBR;uid=root;pwd=root");
             mConn.Open();
-            mAdapter = new MySqlDataAdapter($"SELECT `login`, `senha` FROM `usuario` where nome = '{usuario}' and senha = '{senha}'", mConn);
+            mAdapter = new MySqlDataAdapter($"SELECT login, senha FROM usuario where login = '{usuario}' and senha = '{senha}'", mConn);
             mAdapter.Fill(dt);
 
             return dt;

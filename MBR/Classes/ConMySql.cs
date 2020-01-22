@@ -5,19 +5,22 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApp1.Classes
+namespace MBR.Classes
 {
     class ConMySql
     {
        
-        private MySqlConnection conexao;
+        //private MySqlConnection conexao;
         private MySqlDataAdapter mAdapter;
 
 
-        public void concrud()
-        {
-            
+        MySqlConnection conexao = new MySqlConnection("Persist Security Info=False; server=localhost; database=MBR; uid =root; password =root");
 
+        public MySqlConnection con()
+        {
+            //conexao = new MySqlConnection("Persist Security Info=False; server=localhost; database=MBR; uid =root; password =root");
+
+            return conexao;
         }
 
         public void executa(String _query)
@@ -29,18 +32,18 @@ namespace WindowsFormsApp1.Classes
             conexao.Close();
         }
 
-
+        MySqlConnection conect = new MySqlConnection("Persist Security Info=False;server=localhost;database=MBR;uid=root;pwd=root");
 
         public void ligar ()
         {
-            conexao = new MySqlConnection("Persist Security Info=False; server=localhost;database=crud;uid=root");
-            conexao.Open();
+            
+            conect.Open();
         }
 
 
         public void desligar()
         {
-              conexao.Close();
+              conect.Close();
         }
 
     }

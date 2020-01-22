@@ -22,6 +22,11 @@ namespace MBR
             this.Close();
         }
 
-      
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            Cadastros.Usuario usuario = new Cadastros.Usuario();
+            this.Hide();
+            usuario.ShowDialog();
+        }
     }
 }
