@@ -172,5 +172,12 @@ namespace MBR.Cadastros
                 txtTelefone.ForeColor = Color.Silver;
             }
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menu = new MenuPrincipal();
+            this.Hide();
+            menu.ShowDialog();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,9 +19,8 @@ namespace MBR
         public Login()
         {
             InitializeComponent();
-            //ChecarLogin(txtnome.Text, txtsenha.Text);
+          
         }
-
 
         #region placeholder campos login
         private void txtnome_enter(object sender, EventArgs e)
@@ -55,27 +55,36 @@ namespace MBR
             }
         }
         #endregion
-
-      
+   
         private MySqlDataAdapter mAdapter;
         private DataSet mDataSet;
 
+        public static string ConvertMD5(string input)
+        {
+            StringBuilder hash = new StringBuilder();
+            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                hash.Append(bytes[i].ToString("x2"));
+            }
+            return hash.ToString();
+        }
 
         public DataTable ChecarLogin(String usuario, String senha)
         {
+            String senhamd5 = ConvertMD5(senha);
 
             DataTable dt = new DataTable();
 
             MySqlConnection mConn = new MySqlConnection("Persist Security Info=False;server=localhost;database=MBR;uid=root;pwd=root");
             mConn.Open();
-            mAdapter = new MySqlDataAdapter($"SELECT login, senha FROM usuario where login = '{usuario}' and senha = '{senha}'", mConn);
+            mAdapter = new MySqlDataAdapter($"SELECT login, senha FROM usuario where login = '{usuario}' and senha = '{senhamd5}'", mConn);
             mAdapter.Fill(dt);
 
             return dt;
         }
-
- 
-
 
         private void btnlogin_Click(object sender, EventArgs e)
         {

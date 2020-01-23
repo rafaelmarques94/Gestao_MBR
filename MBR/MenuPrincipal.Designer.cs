@@ -151,6 +151,7 @@
             this.toolStripButton8.Size = new System.Drawing.Size(42, 47);
             this.toolStripButton8.Text = "toolStripButton8";
             this.toolStripButton8.ToolTipText = "Log Off";
+            this.toolStripButton8.Click += new System.EventHandler(this.ToolStripButton8_Click);
             // 
             // toolStripButton9
             // 

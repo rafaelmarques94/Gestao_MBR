@@ -28,5 +28,12 @@ namespace MBR
             this.Hide();
             usuario.ShowDialog();
         }
+
+        private void ToolStripButton8_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
+        }
     }
 }
