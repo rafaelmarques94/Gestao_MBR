@@ -85,6 +85,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(42, 47);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.ToolTipText = "Cadastro de Clientes";
+            this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -163,6 +164,7 @@
             this.toolStripButton9.Size = new System.Drawing.Size(42, 47);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.ToolTipText = "Sair";
+            this.toolStripButton9.Click += new System.EventHandler(this.ToolStripButton9_Click_1);
             // 
             // button1
             // 

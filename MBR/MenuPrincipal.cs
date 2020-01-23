@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MBR.Cadastros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,18 @@ namespace MBR
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
+        }
+
+        private void ToolStripButton9_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void ToolStripButton2_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            this.Hide();
+            cliente.ShowDialog();
         }
     }
 }
