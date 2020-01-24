@@ -83,6 +83,7 @@
             // 
             // IMAGEM
             // 
+            this.IMAGEM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IMAGEM.FillWeight = 150F;
             this.IMAGEM.HeaderText = "";
             this.IMAGEM.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
