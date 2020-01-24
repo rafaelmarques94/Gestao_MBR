@@ -25,7 +25,7 @@ namespace MBR.Cadastros
             selecionaImagem = new OpenFileDialog()
             {
                 FileName = "",
-                //Filter = "Arquivos de Imagem (*.jpg)|*.jpg",
+                Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png",
                 Title = "Selecione uma imagem"
             };
 

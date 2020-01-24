@@ -14,12 +14,11 @@ namespace MBR.Classes
         private MySqlDataAdapter mAdapter;
 
 
-        MySqlConnection conexao = new MySqlConnection("Persist Security Info=False; server=localhost; database=MBR; uid =root; password =root");
+        MySqlConnection conexao = new MySqlConnection("Persist Security Info = False; server=localhost;database=MBR;uid=root;pwd=root");
 
         public MySqlConnection con()
         {
-            //conexao = new MySqlConnection("Persist Security Info=False; server=localhost; database=MBR; uid =root; password =root");
-
+            conexao = new MySqlConnection("Persist Security Info = False; server=localhost;database=MBR;uid=root;pwd=root");
             return conexao;
         }
 
@@ -32,18 +31,17 @@ namespace MBR.Classes
             conexao.Close();
         }
 
-        MySqlConnection conect = new MySqlConnection("Persist Security Info=False;server=localhost;database=MBR;uid=root;pwd=root");
+     
 
         public void ligar ()
-        {
-            
-            conect.Open();
+        {     
+           conexao.Open();
         }
 
 
         public void desligar()
         {
-              conect.Close();
+              conexao.Close();
         }
 
     }

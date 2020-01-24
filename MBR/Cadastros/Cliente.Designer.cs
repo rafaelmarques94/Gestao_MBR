@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.fotoPerfil = new System.Windows.Forms.PictureBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -40,28 +40,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfil)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(193, 330);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 24);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "      Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(193, 330);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(79, 24);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "      Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(105, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 24);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "  Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSalvar.Location = new System.Drawing.Point(105, 330);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(82, 24);
+            this.btnSalvar.TabIndex = 17;
+            this.btnSalvar.Text = "  Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // btnUpload
             // 
@@ -71,11 +72,12 @@
             this.btnUpload.TabIndex = 10;
             this.btnUpload.Text = "Escolher Arquivo";
             this.btnUpload.UseVisualStyleBackColor = true;
+            this.btnUpload.Click += new System.EventHandler(this.BtnUpload_Click);
             // 
             // fotoPerfil
             // 
-            this.fotoPerfil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("fotoPerfil.BackgroundImage")));
             this.fotoPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fotoPerfil.Image = ((System.Drawing.Image)(resources.GetObject("fotoPerfil.Image")));
             this.fotoPerfil.Location = new System.Drawing.Point(63, 2);
             this.fotoPerfil.Name = "fotoPerfil";
             this.fotoPerfil.Size = new System.Drawing.Size(164, 164);
@@ -91,6 +93,8 @@
             this.txtEndereco.Size = new System.Drawing.Size(249, 20);
             this.txtEndereco.TabIndex = 12;
             this.txtEndereco.Text = "Endereço";
+            this.txtEndereco.Enter += new System.EventHandler(this.TxtEndereco_Enter);
+            this.txtEndereco.Leave += new System.EventHandler(this.TxtEndereco_Leave);
             // 
             // txtEmail
             // 
@@ -100,6 +104,8 @@
             this.txtEmail.Size = new System.Drawing.Size(249, 20);
             this.txtEmail.TabIndex = 13;
             this.txtEmail.Text = "mail@example.com";
+            this.txtEmail.Enter += new System.EventHandler(this.TxtEmail_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // txtTelefone
             // 
@@ -109,6 +115,8 @@
             this.txtTelefone.Size = new System.Drawing.Size(249, 20);
             this.txtTelefone.TabIndex = 14;
             this.txtTelefone.Text = "Telefone";
+            this.txtTelefone.Enter += new System.EventHandler(this.TxtTelefone_Enter);
+            this.txtTelefone.Leave += new System.EventHandler(this.TxtTelefone_Leave);
             // 
             // txtNome
             // 
@@ -118,14 +126,16 @@
             this.txtNome.Size = new System.Drawing.Size(249, 20);
             this.txtNome.TabIndex = 11;
             this.txtNome.Text = "Nome";
+            this.txtNome.Enter += new System.EventHandler(this.TxtNome_Enter);
+            this.txtNome.Leave += new System.EventHandler(this.TxtNome_Leave);
             // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 408);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.fotoPerfil);
             this.Controls.Add(this.txtEndereco);
@@ -144,8 +154,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.PictureBox fotoPerfil;
         private System.Windows.Forms.TextBox txtEndereco;

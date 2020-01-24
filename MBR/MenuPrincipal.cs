@@ -48,5 +48,12 @@ namespace MBR
             this.Hide();
             cliente.ShowDialog();
         }
+
+        private void ToolStripButton3_Click(object sender, EventArgs e)
+        {
+            CatalogoCliente catalogo = new CatalogoCliente();
+            this.Hide();
+            catalogo.ShowDialog();
+        }
     }
 }

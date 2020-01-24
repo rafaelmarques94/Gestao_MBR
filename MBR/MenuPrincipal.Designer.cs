@@ -97,6 +97,7 @@
             this.toolStripButton3.Size = new System.Drawing.Size(42, 47);
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.ToolTipText = "Catálogo de Clientes";
+            this.toolStripButton3.Click += new System.EventHandler(this.ToolStripButton3_Click);
             // 
             // toolStripButton4
             // 
