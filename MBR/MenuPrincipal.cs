@@ -18,42 +18,47 @@ namespace MBR
             InitializeComponent();
         }
 
-        private void ToolStripButton9_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+      
 
-        private void ToolStripButton1_Click(object sender, EventArgs e)
+        private void BtnCadastroUsuario_Click(object sender, EventArgs e)
         {
             Cadastros.Usuario usuario = new Cadastros.Usuario();
             this.Hide();
             usuario.ShowDialog();
         }
 
-        private void ToolStripButton8_Click(object sender, EventArgs e)
+        private void btnLogoff_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            this.Hide();
-            login.ShowDialog();
+            if (MessageBox.Show("Deseja realmente sair do sistema ?","LogOff",MessageBoxButtons.YesNo,MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                this.Dispose();
+                Login login = new Login();
+                login.ShowDialog();
+
+            }
+        
         }
 
-        private void ToolStripButton9_Click_1(object sender, EventArgs e)
+        private void btnSair_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
+    
         }
 
-        private void ToolStripButton2_Click(object sender, EventArgs e)
+        private void btnCadastroCliente_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
             this.Hide();
             cliente.ShowDialog();
         }
 
-        private void ToolStripButton3_Click(object sender, EventArgs e)
+        private void btnCatalogoCliente_Click(object sender, EventArgs e)
         {
             CatalogoCliente catalogo = new CatalogoCliente();
             this.Hide();
             catalogo.ShowDialog();
         }
+
+      
     }
 }

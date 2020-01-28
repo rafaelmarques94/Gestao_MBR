@@ -21,8 +21,8 @@ namespace MBR.Cadastros
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             MenuPrincipal menu = new MenuPrincipal();
-            this.Hide();
             menu.ShowDialog();
         }
 

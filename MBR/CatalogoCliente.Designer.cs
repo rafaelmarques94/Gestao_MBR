@@ -40,18 +40,22 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(12, 12);
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(9, 12);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(359, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(391, 31);
             this.txtPesquisar.TabIndex = 0;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(377, 12);
+            this.btnPesquisar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPesquisar.BackgroundImage")));
+            this.btnPesquisar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Location = new System.Drawing.Point(406, 11);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(40, 36);
             this.btnPesquisar.TabIndex = 1;
-            this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
@@ -69,7 +73,7 @@
             this.IMAGEM,
             this.NOME,
             this.TELEFONE});
-            this.dgvCliente.Location = new System.Drawing.Point(12, 62);
+            this.dgvCliente.Location = new System.Drawing.Point(9, 62);
             this.dgvCliente.MultiSelect = false;
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.RowHeadersVisible = false;
@@ -78,7 +82,7 @@
             this.dgvCliente.ShowCellToolTips = false;
             this.dgvCliente.ShowEditingIcon = false;
             this.dgvCliente.ShowRowErrors = false;
-            this.dgvCliente.Size = new System.Drawing.Size(440, 427);
+            this.dgvCliente.Size = new System.Drawing.Size(440, 445);
             this.dgvCliente.TabIndex = 2;
             // 
             // IMAGEM
@@ -110,14 +114,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 519);
+            this.ClientSize = new System.Drawing.Size(458, 519);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CatalogoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogo de Clientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CatalogoCliente_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

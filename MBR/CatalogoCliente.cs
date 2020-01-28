@@ -47,5 +47,18 @@ namespace MBR
             }
 
         }
+
+      
+
+        private void CatalogoCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            MenuPrincipal menu = new MenuPrincipal();          
+            menu.ShowDialog();
+            
+
+        }
     }
-}
+
+    }
+

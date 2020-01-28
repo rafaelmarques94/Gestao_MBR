@@ -30,9 +30,9 @@ namespace MBR
             if (progressBar1.Value == 100)
             {
                 timer1.Stop();
-                MenuPrincipal principal = new MenuPrincipal();
-                this.Hide();
-                principal.ShowDialog();
+                this.Dispose();
+                MenuPrincipal menu = new MenuPrincipal();
+                menu.ShowDialog();
             }
         }
 
