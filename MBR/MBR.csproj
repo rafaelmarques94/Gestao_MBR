@@ -66,6 +66,12 @@
       <DependentUpon>CatalogoCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ConMySql.cs" />
+    <Compile Include="DadosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DadosCliente.Designer.cs">
+      <DependentUpon>DadosCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CatalogoCliente.resx">
       <DependentUpon>CatalogoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DadosCliente.resx">
+      <DependentUpon>DadosCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>

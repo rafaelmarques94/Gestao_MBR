@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,17 +49,37 @@ namespace MBR
 
         }
 
-      
+
 
         private void CatalogoCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
-            MenuPrincipal menu = new MenuPrincipal();          
+            MenuPrincipal menu = new MenuPrincipal();
             menu.ShowDialog();
-            
+
+
+        }
+
+        private void DgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            byte[] byteFoto = (byte[])dgvCliente.SelectedRows[0].Cells[0].Value;
+            MemoryStream ms = new MemoryStream(byteFoto);
+
+            string nome = dgvCliente.SelectedRows[0].Cells[1].Value.ToString();
+            string telefone = dgvCliente.SelectedRows[0].Cells[2].Value.ToString();
+            Image foto = Image.FromStream(ms);
+
+            DadosCliente cliente = new DadosCliente(nome, telefone, foto);
+            this.Hide();
+
+            if (DialogResult.OK != cliente.ShowDialog()) //verifica se a tela de dados do cliente foi fechada
+            {
+                this.Show();
+            }
 
         }
     }
 
-    }
+}
 

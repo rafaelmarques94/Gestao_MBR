@@ -78,12 +78,14 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.RowHeadersVisible = false;
             this.dgvCliente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.ShowCellErrors = false;
             this.dgvCliente.ShowCellToolTips = false;
             this.dgvCliente.ShowEditingIcon = false;
             this.dgvCliente.ShowRowErrors = false;
             this.dgvCliente.Size = new System.Drawing.Size(440, 445);
             this.dgvCliente.TabIndex = 2;
+            this.dgvCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCliente_CellDoubleClick);
             // 
             // IMAGEM
             // 
