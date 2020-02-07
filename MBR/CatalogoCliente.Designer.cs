@@ -35,6 +35,8 @@
             this.IMAGEM = new System.Windows.Forms.DataGridViewImageColumn();
             this.NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TELEFONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,9 @@
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IMAGEM,
             this.NOME,
-            this.TELEFONE});
+            this.TELEFONE,
+            this.ENDERECO,
+            this.EMAIL});
             this.dgvCliente.Location = new System.Drawing.Point(9, 62);
             this.dgvCliente.MultiSelect = false;
             this.dgvCliente.Name = "dgvCliente";
@@ -112,6 +116,18 @@
             this.TELEFONE.Name = "TELEFONE";
             this.TELEFONE.Width = 170;
             // 
+            // ENDERECO
+            // 
+            this.ENDERECO.HeaderText = "ENDERECO";
+            this.ENDERECO.Name = "ENDERECO";
+            this.ENDERECO.Visible = false;
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.HeaderText = "EMAIL";
+            this.EMAIL.Name = "EMAIL";
+            this.EMAIL.Visible = false;
+            // 
             // CatalogoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,5 +156,7 @@
         private System.Windows.Forms.DataGridViewImageColumn IMAGEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOME;
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
     }
 }

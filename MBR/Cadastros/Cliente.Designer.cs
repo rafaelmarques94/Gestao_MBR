@@ -44,9 +44,9 @@
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(193, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(190, 330);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(79, 24);
+            this.btnCancelar.Size = new System.Drawing.Size(82, 24);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "      Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -54,9 +54,10 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalvar.BackgroundImage")));
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSalvar.Location = new System.Drawing.Point(105, 330);
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(102, 330);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(82, 24);
             this.btnSalvar.TabIndex = 17;

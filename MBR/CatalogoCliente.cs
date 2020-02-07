@@ -36,9 +36,12 @@ namespace MBR
 
                 for (int count = 0; count < dtCliente.Rows.Count; count++)
                 {
+                    dgvCliente.Rows[count].Cells[0].Value = dtCliente.Rows[count]["IMAGEM"];
                     dgvCliente.Rows[count].Cells[1].Value = dtCliente.Rows[count]["NOME"].ToString();
                     dgvCliente.Rows[count].Cells[2].Value = dtCliente.Rows[count]["TELEFONE"].ToString();
-                    dgvCliente.Rows[count].Cells[0].Value = dtCliente.Rows[count]["IMAGEM"];
+                    dgvCliente.Rows[count].Cells[3].Value = dtCliente.Rows[count]["ENDERECO"].ToString();
+                    dgvCliente.Rows[count].Cells[4].Value = dtCliente.Rows[count]["EMAIL"].ToString();
+
                 }
             }
 
@@ -65,12 +68,14 @@ namespace MBR
 
             byte[] byteFoto = (byte[])dgvCliente.SelectedRows[0].Cells[0].Value;
             MemoryStream ms = new MemoryStream(byteFoto);
-
-            string nome = dgvCliente.SelectedRows[0].Cells[1].Value.ToString();
-            string telefone = dgvCliente.SelectedRows[0].Cells[2].Value.ToString();
             Image foto = Image.FromStream(ms);
+            string nome = dgvCliente.SelectedRows[0].Cells[1].Value.ToString();  
+            string telefone = dgvCliente.SelectedRows[0].Cells[2].Value.ToString();
+            string endereco = dgvCliente.SelectedRows[0].Cells[3].Value.ToString();
+            string email = dgvCliente.SelectedRows[0].Cells[4].Value.ToString();
+          
 
-            DadosCliente cliente = new DadosCliente(nome, telefone, foto);
+            DadosCliente cliente = new DadosCliente(nome, telefone, foto, email, endereco);
             this.Hide();
 
             if (DialogResult.OK != cliente.ShowDialog()) //verifica se a tela de dados do cliente foi fechada

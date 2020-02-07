@@ -17,7 +17,7 @@ namespace MBR
            
         }
 
-        public DadosCliente(string nome, string telefone, Image perfil)
+        public DadosCliente(string nome, string telefone, Image perfil, string email, string endereco)
         {
 
             InitializeComponent();
@@ -25,9 +25,9 @@ namespace MBR
             this.Text = nome;
             pictureCliente.Image = perfil;
             lblNome.Text = nome;
-            //lblEmail.Text = email;
+            lblEmail.Text = email;
             lblTelefone.Text = telefone;
-            //lblEndereco.Text = endereco;
+            lblEndereco.Text = endereco;
 
         }
     }

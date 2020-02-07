@@ -109,6 +109,7 @@
             this.toolStripButton4.Size = new System.Drawing.Size(42, 47);
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.ToolTipText = "Registro de Incidentes";
+            this.toolStripButton4.Click += new System.EventHandler(this.ToolStripButton4_Click);
             // 
             // toolStripButton5
             // 

@@ -59,6 +59,11 @@ namespace MBR
             catalogo.ShowDialog();
         }
 
-      
+        private void ToolStripButton4_Click(object sender, EventArgs e)
+        {
+            Incidente incidente = new Incidente();
+            this.Dispose();
+            incidente.ShowDialog();
+        }
     }
 }
