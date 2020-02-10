@@ -147,6 +147,7 @@
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cliente_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -156,5 +156,11 @@ namespace MBR.Cadastros
 
         #endregion
 
+        private void Cliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.ShowDialog();
+        }
     }
 }

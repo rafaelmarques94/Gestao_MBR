@@ -179,5 +179,12 @@ namespace MBR.Cadastros
             MenuPrincipal menu = new MenuPrincipal();
             menu.ShowDialog();
         }
+
+        private void Usuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.ShowDialog();
+        }
     }
 }

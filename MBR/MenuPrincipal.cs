@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,19 @@ namespace MBR
             Incidente incidente = new Incidente();
             this.Dispose();
             incidente.ShowDialog();
+        }
+
+        private void ToolStripButton6_Click(object sender, EventArgs e)
+        {
+            string url = "https://mbrsolucoes.com.br";
+            Process.Start("chrome.exe", url);
+        }
+
+        private void BtnLista_Incidentes_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Lista_Incidentes incidentes = new Lista_Incidentes();
+            incidentes.ShowDialog();
         }
     }
 }

@@ -111,6 +111,12 @@
     <Compile Include="Cadastros\Incidente.Designer.cs">
       <DependentUpon>Incidente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lista_Incidentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lista_Incidentes.Designer.cs">
+      <DependentUpon>Lista_Incidentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DadosCliente.resx">
       <DependentUpon>DadosCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lista_Incidentes.resx">
+      <DependentUpon>Lista_Incidentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>

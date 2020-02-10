@@ -161,6 +161,7 @@
             this.Name = "Usuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Usuario_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.fotoPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -59,8 +59,6 @@ namespace MBR
             this.Dispose();
             MenuPrincipal menu = new MenuPrincipal();
             menu.ShowDialog();
-
-
         }
 
         private void DgvCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
