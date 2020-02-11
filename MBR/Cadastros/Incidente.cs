@@ -30,10 +30,44 @@ namespace MBR
 
 
 
-        private void PreencheComboClientes()
+        private void PreencheCombo(string pessoa)
         {
+          
+        }
+
+
+
+
+        private DataTable ListarPessoa(string pessoa)
+        {
+            ConMySql conexao = new ConMySql();
+            conexao.ligar();
+            DataTable dtPessoa = new DataTable();
+
+            try
+            {
+                string comando = $"SELECT * FROM  {pessoa} order by nome";               
+                MySqlDataAdapter Adapter = new MySqlDataAdapter(comando, conexao.con());
+                Adapter.Fill(dtPessoa);
+            }
+
+            catch (Exception EX)
+            {
+                MessageBox.Show("ERRO:" + "\n" + EX.Message);
+            }
+            return dtPessoa;
+        }
+
+
+       
+
+
+
+        private void CmbCliente_Click(object sender, EventArgs e)
+        {
+
             DataTable dt = new DataTable();
-            dt = ListarClientes();
+            dt = ListarPessoa("cliente");
 
             if (dt.Rows.Count > 0)
             {
@@ -41,37 +75,11 @@ namespace MBR
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     cmbCliente.Items.Add(dt.Rows[i]["NOME"].ToString());
-                
+
                 }
                 cmbCliente.SelectedIndex = 0;
             }
-        }
-
-
-        private DataTable ListarClientes()
-        {
-            ConMySql conexao = new ConMySql();
-            conexao.ligar();
-            DataTable dtCliente = new DataTable();
-
-            try
-            {
-                string comando = "SELECT * FROM  cliente order by nome";               
-                MySqlDataAdapter Adapter = new MySqlDataAdapter(comando, conexao.con());
-                Adapter.Fill(dtCliente);
-            }
-
-            catch (Exception EX)
-            {
-                MessageBox.Show("ERRO AO BUSCAR CLIENTES" + "\n" + EX.Message);
-            }
-            return dtCliente;
-        }
-
-      
-        private void CmbCliente_Click(object sender, EventArgs e)
-        {
-            PreencheComboClientes();
+            
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -86,15 +94,13 @@ namespace MBR
 
                 MySqlConnection conexao = new MySqlConnection("Persist Security Info = False; server=localhost;database=MBR;uid=root;pwd=root");
                 conexao.Open();
-                string comando = @"insert into incidente (titulo,cliente,solicitante,descricao,tipo,imagem,status,data_abertura)
-                                   VALUES (?titulo, ?cliente, ?solicitante, ?descricao, ?tipo, ?imagem, ?status, current_timestamp() )";
+                string comando = @"insert into incidente (titulo,cliente,solicitante,descricao,tipo,imagem,status,data_abertura,usuario_atendente)
+                                   VALUES (?titulo, ?cliente, ?solicitante, ?descricao, ?tipo, ?imagem, ?status, current_timestamp(), ?atendente )";
             
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao;
                 cmd.CommandText = comando;
-                
-                
-
+                             
                 cmd.Parameters.AddWithValue("titulo", txtTitulo.Text);
                 cmd.Parameters.AddWithValue("cliente", cmbCliente.Text);
                 cmd.Parameters.AddWithValue("solicitante", txtSolicitante.Text);
@@ -102,9 +108,7 @@ namespace MBR
                 cmd.Parameters.AddWithValue("tipo", tipoIncidente);
                 cmd.Parameters.AddWithValue("imagem", imagem);
                 cmd.Parameters.AddWithValue("status", "Pendente");
-              
-
-
+                cmd.Parameters.AddWithValue("atendente", cmbAtendente.Text);
 
                 cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -136,7 +140,6 @@ namespace MBR
             if (selecionaImagem.ShowDialog() == DialogResult.OK)
             {
                 string filePatch = selecionaImagem.FileName;
-                //fotoPerfil.Image = Image.FromFile(filePatch);
                 txtAnexo.Text = filePatch;
             }
         }
@@ -162,6 +165,26 @@ namespace MBR
             this.Dispose();
             MenuPrincipal menu = new MenuPrincipal();
             menu.ShowDialog();
+        }
+
+        private void CmbAtendente_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = ListarPessoa("usuario");
+
+            if (dt.Rows.Count > 0)
+            {
+                cmbAtendente.Items.Clear();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cmbAtendente.Items.Add(dt.Rows[i]["NOME"].ToString());
+
+                }
+                cmbAtendente.SelectedIndex = 0;
+            }
+
+
+       
         }
     }
 }

@@ -30,7 +30,7 @@ namespace MBR
 
             try
             {
-                string comando = @"SELECT * FROM  incidente";
+                string comando = @"select * from incidente order by data_abertura";
 
                 MySqlDataAdapter Adapter = new MySqlDataAdapter(comando, conexao.con());
                 Adapter.Fill(dtIncidente);
@@ -41,9 +41,9 @@ namespace MBR
                 {
                     dgvIncidente.Rows[count].Cells[0].Value = dtIncidente.Rows[count]["titulo"];
                     dgvIncidente.Rows[count].Cells[1].Value = dtIncidente.Rows[count]["cliente"].ToString();
-                    dgvIncidente.Rows[count].Cells[2].Value = dtIncidente.Rows[count]["Solicitante"].ToString();
-                    dgvIncidente.Rows[count].Cells[3].Value = dtIncidente.Rows[count]["descricao"].ToString();
-                    dgvIncidente.Rows[count].Cells[4].Value = dtIncidente.Rows[count]["tipo"].ToString();
+                    dgvIncidente.Rows[count].Cells[2].Value = dtIncidente.Rows[count]["Solicitante"].ToString();                   
+                    dgvIncidente.Rows[count].Cells[3].Value = dtIncidente.Rows[count]["tipo"].ToString();
+                    dgvIncidente.Rows[count].Cells[4].Value = dtIncidente.Rows[count]["usuario_atendente"].ToString();
                 }
 
                 dgvIncidente.ClearSelection();

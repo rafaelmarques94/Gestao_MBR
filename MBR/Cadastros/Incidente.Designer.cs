@@ -45,6 +45,8 @@
             this.btnAnexo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAnexo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbAtendente = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +155,7 @@
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(210, 414);
+            this.btnCancelar.Location = new System.Drawing.Point(210, 456);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(82, 24);
             this.btnCancelar.TabIndex = 20;
@@ -166,7 +168,7 @@
             this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(122, 414);
+            this.btnSalvar.Location = new System.Drawing.Point(117, 456);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(82, 24);
             this.btnSalvar.TabIndex = 19;
@@ -201,11 +203,32 @@
             this.txtAnexo.Size = new System.Drawing.Size(100, 20);
             this.txtAnexo.TabIndex = 23;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 411);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Atendente:";
+            // 
+            // cmbAtendente
+            // 
+            this.cmbAtendente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAtendente.FormattingEnabled = true;
+            this.cmbAtendente.Location = new System.Drawing.Point(93, 408);
+            this.cmbAtendente.Name = "cmbAtendente";
+            this.cmbAtendente.Size = new System.Drawing.Size(199, 21);
+            this.cmbAtendente.TabIndex = 25;
+            this.cmbAtendente.Click += new System.EventHandler(this.CmbAtendente_Click);
+            // 
             // Incidente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(322, 450);
+            this.ClientSize = new System.Drawing.Size(322, 492);
+            this.Controls.Add(this.cmbAtendente);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtAnexo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAnexo);
@@ -250,5 +273,7 @@
         private System.Windows.Forms.Button btnAnexo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAnexo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbAtendente;
     }
 }
